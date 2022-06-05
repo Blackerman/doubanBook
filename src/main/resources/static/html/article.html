@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章管理</title>
+    <link rel="stylesheet" href="/js/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/ZLM.css">
+    <style type="text/css">
+    </style>
+</head>
+<body class="greenimage">
+<!--检索-->
+<div class="layui-row" id="divSearch" style="margin-top: 10px">
+    <div class="layui-form">
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">
+                文章名称
+            </label>
+            <div class="layui-inline" style="margin-left: 20px">
+                <input type="text" name="name" id="name" placeholder="需要检索的文章名称" class="layui-input"/>
+            </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">
+                文章作者
+            </label>
+            <div class="layui-inline" style="margin-left: 20px">
+                <input type="text" name="author" id="author" placeholder="需要检索的文章作者" class="layui-input"/>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">
+                文章标签
+            </label>
+            <div class="layui-inline" style="margin-left: 20px">
+                <input type="text" name="author" id="tags" placeholder="需要检索的文章标签" class="layui-input"/>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-inline" style="margin-left: 50px">
+            <div class="layui-inline">
+                <button id="btnSearch" class="layui-btn layui-btn-primary">
+                    <i class="layui-icon layui-icon-search"></i>
+                </button>
+            </div>
+        </div>
+
+
+<!--            <div class="layui-form layui-form-pane" layui-filter="userInfoEdit">-->
+<!--                <div class="layui-form-item">-->
+<!--                    <label class="layui-form-label">文章名称</label>-->
+<!--                    <div class="layui-input-block" id="articleName" style="text-align: center;font-size: 20px"></div>-->
+<!--                </div>-->
+<!--                <div class="layui-form-item">-->
+<!--                    <label class="layui-form-label">作者</label>-->
+<!--                    <div class="layui-input-block" id="author" style="text-align: center;font-size: 20px"></div>-->
+<!--                </div>-->
+<!--&lt;!&ndash;                <div class="layui-form-item">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <label class="layui-form-label">内容</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <div class="layui-input-block" id="content" style="text-align: center;font-size: 10px;height:50px"></div>&ndash;&gt;-->
+<!--&lt;!&ndash;                </div>&ndash;&gt;-->
+
+<!--            </div>-->
+<!--        <div id="divArticleInfo" style="display: none;margin:20px;height: 400px;width: 650px">-->
+<!--            <div class="layui-card">-->
+<!--                <label class="layui-card-header">文章名称</label>-->
+<!--                <div class="layui-input-block" id="articleName" style="text-align: center;font-size: 20px"></div>-->
+<!--            </div>-->
+<!--            <div class="layui-card">-->
+<!--                <label class="layui-card-header">作者</label>-->
+<!--                <div class="layui-input-block" id="articleAuthor" style="text-align: center;font-size: 20px"></div>-->
+<!--            </div>-->
+<!--            <div class="layui-card">-->
+<!--                <div class="layui-card-header">内容</div>-->
+<!--                <div class="layui-input-block" id="content" style="text-align: center;font-size: 10px;height:50px"></div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        查看文章内容-->
+        <div id="divArticleInfo" style="display:none;margin: 10px;">
+            <div class="layui-form " layui-filter="bookInfoEdit">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章名称</label>
+                    <div class="layui-input-block" id="articleName" style="text-align: center;font-size: 20px"></div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">作者：</label>
+                    <div class="layui-input-block" id="articleAuthor" style="text-align: center;font-size: 20px"></div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">内容</label>
+                    <div class="layui-input-block">
+                        <textarea name="desc" placeholder="无" class="layui-textarea" id="content"></textarea>
+                    </div>
+                </div>
+<!--                <div class="layui-form-item">-->
+<!--                    <label class="layui-form-label">评分：</label>-->
+<!--                    <div class="layui-input-block">-->
+<!--                        <input type="text" id="score"-->
+<!--                               required placeholder="请输入您的评分" class="layui-input"/>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="layui-row" id="result">
+    <table id="tblResult" lay-filter="tblResult"></table>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="/js/layui/layui.js"></script>
+<script type="text/javascript" src="/js/logic/article.js"></script>
+
+
+
+

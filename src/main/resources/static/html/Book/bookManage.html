@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="never">
+    <title>图书管理</title>
+            <link rel="stylesheet" href="/js/layui/css/layui.css">
+            <link rel="stylesheet" href="/css/ZLM.css">
+        </head>
+<body class="greenimage">
+<!--检索功能-->
+<div class="layui-row" id="divSearch">
+    <div class="layui-form">
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">
+                图书名称
+            </label>
+            <div class="layui-inline">
+                <input type="text" name="book_name" id="book_name" placeholder="需要检索的图书名" class="layui-input"/>
+            </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">
+                作者
+            </label>
+            <div class="layui-inline">
+                <input type="text" name="book_author" id="book_author" placeholder="需要检索的作者" class="layui-input"/>
+            </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">
+                标签
+            </label>
+            <div class="layui-inline">
+                <input type="text" name="book_d_tags" id="book_d_tags" placeholder="需要检索的标签" class="layui-input"/>
+            </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">
+                热门标签
+            </label>
+            <div class="layui-inline">
+                <select name="book_d_hotTag" id="book_d_hotTag" class="layui-input">
+                    <option value="" selected>全部</option>
+                    <option value="毛泽东">毛泽东</option>
+                    <option value="编程">编程</option>
+                    <option value="东野圭吾">东野圭吾</option>
+                    <option value="村上春树">村上春树</option>
+                    <option value="Java">Java</option>
+                    <option value="王小波">王小波</option>
+<!--                    <option value="漫画">漫画</option>-->
+<!--                    <option value="历史">历史</option>-->
+<!--                    <option value="诗歌">诗歌</option>-->
+<!--                    <option value="编程">编程</option>-->
+<!--                    <option value="网络小说">网络小说</option>-->
+<!--                    <option value="经济学">经济学</option>-->
+<!--                    <option value="推理">推理</option>-->
+<!--                    <option value="互联网">互联网</option>-->
+<!--                    <option value="经典">经典</option>-->
+<!--                    <option value="童话">童话</option>-->
+<!--                    <option value="武侠">武侠</option>-->
+<!--                    <option value="科普">科普</option>-->
+<!--                    <option value="言情">言情</option>-->
+
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">
+                热门作者
+            </label>
+            <div class="layui-inline">
+                <select name="book_d_hotTag" id="book_d_hotauthor" class="layui-input" lay-search>
+                    <option value="" selected>全部</option>
+                    <optgroup label="已爬取的热门作者">
+                        <option value="东野圭吾">东野圭吾</option>
+                        <option value="王小波">王小波</option>
+                        <option value="毛泽东">毛泽东</option>
+                        <option value="余秋雨">余秋雨</option>
+                        <option value="村上春树">村上春树</option>
+
+                    </optgroup>
+                    <optgroup label="未爬取的热门作者">
+                        <option value="鲁迅" disabled>鲁迅</option>
+                        <option value="钱钟书" disabled>钱钟书</option>
+                        <option value="沧月" disabled>沧月</option>
+                        <option value="古龙" disabled>古龙</option>
+                        <option value="张爱玲" disabled>张爱玲</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+            <div class="layui-inline">
+                <button id="btnSearch" class="layui-btn layui-btn-primary">
+                    <i class="layui-icon layui-icon-search"></i>检索
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--检索结果-->
+<div class="layui-row" id="result">
+    <table id="tblResult" lay-filter="tblResult"></table>
+</div>
+<!--        添加我的文章-->
+<div id="divMyArticleAdd" style="display:none;margin: 10px;">
+    <div class="layui-form " layui-filter="divNoticeUpdate">
+
+        <div class="layui-form-item">
+            <label class="layui-form-label">文章名称</label>
+            <div class="layui-input-block">
+                <input type="text" id="addMyArticleName"
+                       required placeholder="添加文章名称" class="layui-input"/>
+            </div>
+        </div>
+
+<!--        <div class="layui-form-item">-->
+<!--            <label class="layui-form-label">文章标签</label>-->
+<!--            <div class="layui-input-block">-->
+<!--                <div class="layui-input-block" id="addMyArticleTags" style="text-align: center;font-size: 20px"></div>-->
+<!--&lt;!&ndash;                <input type="text" id="addMyArticleTags"&ndash;&gt;-->
+<!--&lt;!&ndash;                       required placeholder="添加文章标签" class="layui-input"/>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+
+        <div class="layui-form-item layui-form-text">
+            <label class="layui-form-label">内容</label>
+            <div class="layui-input-block">
+                <textarea name="desc" placeholder="请输入文章内容" class="layui-textarea" id="addMyArticleContent"></textarea>
+            </div>
+        </div>
+    </div>
+</div>
+<!--评分界面-->
+<div id="divBookInfo" style="display:none;margin: 10px;">
+    <div class="layui-form layui-form-pane" layui-filter="bookInfoEdit">
+        <div class="layui-form-item">
+            <label class="layui-form-label">图书名称</label>
+            <div class="layui-input-block" id="name" style="text-align: center;font-size: 20px"></div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">作者：</label>
+            <div class="layui-input-block" id="author" style="text-align: center;font-size: 20px"></div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">简介</label>
+            <div class="layui-input-block" id="info" style="text-align: center;font-size: 10px"></div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">评分：</label>
+            <div class="layui-input-block">
+                <input type="text" id="score"
+                       required placeholder="请输入您的评分" class="layui-input"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
+<script type="text/javascript" src="/js/layui/layui.all.js"></script>
+<script type="text/javascript" src="/js/logic/bookManage.js"></script>

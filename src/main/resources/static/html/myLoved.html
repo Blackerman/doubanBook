@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的粉丝</title>
+    <link rel="stylesheet" href="/js/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/ZLM.css">
+    <style type="text/css">
+    </style>
+</head>
+<body class="greenimage">
+<!--检索-->
+<div class="layui-row" id="divSearch" style="margin-top: 10px">
+    <div class="layui-form">
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">
+                用户名
+            </label>
+            <div class="layui-inline" style="margin-left: 20px">
+                <input type="text" name="name" id="name" placeholder="需要检索的用户名称" class="layui-input"/>
+            </div>
+        </div>
+
+
+        <div class="layui-form-item layui-inline" style="margin-left: 50px">
+            <div class="layui-inline">
+                <button id="btnSearch" class="layui-btn layui-btn-primary " >
+                    <i class="layui-icon layui-icon-search" style="font-size:15px"></i>
+                    粉丝
+                </button>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-inline" style="margin-left: 50px">
+            <div class="layui-inline">
+                <button id="btnSearchAll" class="layui-btn layui-btn-primary " >
+                    <i class="layui-icon layui-icon-search" style="font-size:15px"></i>
+                    全部用户
+                </button>
+            </div>
+        </div>
+        <div class="layui-form-item layui-inline" style="margin-left: 50px">
+            <div class="layui-inline">
+                <button id="btnSearchAdvise" class="layui-btn layui-btn-primary " >
+                    <i class="layui-icon layui-icon-user" style="font-size:15px"></i>
+                    用户推荐
+                </button>
+            </div>
+        </div>
+
+<!--我的文章内容-->
+        <div id="divArticleInfo" style="display:none;margin: 10px;">
+            <div class="layui-form layui-form-pane" layui-filter="bookInfoEdit">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章名称</label>
+                    <div class="layui-input-block" id="articleName" style="text-align: center;font-size: 20px"></div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">作者：</label>
+                    <div class="layui-input-block" id="articleAuthor" style="text-align: center;font-size: 20px"></div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">内容</label>
+                    <div class="layui-input-block" id="content" style="text-align: center;font-size: 10px"></div>
+                </div>
+<!--                <div class="layui-form-item">-->
+<!--                    <label class="layui-form-label">评分：</label>-->
+<!--                    <div class="layui-input-block">-->
+<!--                        <input type="text" id="score"-->
+<!--                               required placeholder="请输入您的评分" class="layui-input"/>-->
+<!--                    </div>-->
+<!--                </div>-->
+            </div>
+        </div>
+<!--        添加我的文章-->
+        <div id="divMyArticleAdd" style="display:none;margin: 10px;">
+            <div class="layui-form layui-form-pane" layui-filter="divNoticeUpdate">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章名称</label>
+                    <div class="layui-input-block">
+                        <input type="text" id="addMyArticleName"
+                               required placeholder="添加文章名称" class="layui-input"/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">文章标签</label>
+                    <div class="layui-input-block">
+                        <input type="text" id="addMyArticleTags"
+                               required placeholder="添加文章标签" class="layui-input"/>
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">内容</label>
+                    <div class="layui-input-block">
+                        <input type="text" id="addMyArticleContent"
+                               required placeholder="添加文章内容" class="layui-input"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="layui-row" id="result">
+    <table id="tblResult" lay-filter="tblResult"></table>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="/js/layui/layui.js"></script>
+<script type="text/javascript" src="/js/logic/myLoved.js"></script>
+
+
+
+

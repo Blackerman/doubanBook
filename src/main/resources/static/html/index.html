@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>login</title>
+	<link rel="stylesheet" type="text/css" href="/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="/css/demo.css" />
+	<link rel="stylesheet" href="/js/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/live2d.css"/>
+	<!--必要样式-->
+	<link rel="stylesheet" type="text/css" href="/css/component.css" />
+	<!--[if IE]>
+	<script src="/js/html5.js"></script>
+	<![endif]-->
+</head>
+<body>
+<div class="container demo-1">
+	<div class="content">
+		<div id="large-header" class="large-header">
+			<canvas id="demo-canvas"></canvas>
+			<div class="logo_box" id="loginInfo">
+				<center><h1>图书信息分享平台</h1></center>
+				<br>
+
+				<form action="" name="f" method="post">
+					<div class="input_outer">
+						<span class="u_user"></span>
+						<input name="name"  id="name" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户">
+					</div>
+					<div class="input_outer">
+						<span class="us_uer"></span>
+						<input name="password"  id="password" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
+					</div>
+					<div class="mb2" style="opacity: 0.6"><a class="act-but submit" href="javascript:;" id="login" style="color: #FFFFFF;height: 40px">登录</a></div>
+					<div class="mb2"  style="opacity: 0.6"><a class="act-but button" href="javascript:;" id="ToRegister" style="color: #FFFFFF;height: 40px">注册</a></div>
+				</form>
+			</div>
+			<div class="logo_box" style="display: none" id="registerInfo">
+				<center><h1>注册界面</h1></center>
+				<br>
+				<form action="" name="f" method="post">
+					<div class="input_outer">
+						<span class="u_user"></span>
+						<input name="name"  id="newName" class="text" style="color: #FFFFFF !important" type="text" placeholder="请输入账户">
+					</div>
+					<div class="input_outer">
+						<span class="us_uer"></span>
+						<input name="password"  id="newPassword1" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请输入密码">
+					</div>
+					<div class="input_outer">
+						<span class="us_uer"></span>
+						<input name="password"  id="newPassword2" class="text" style="color: #FFFFFF !important; position:absolute; z-index:100;"value="" type="password" placeholder="请再次输入密码">
+					</div>
+					<div class="mb2" style="opacity: 0.6"><a class="act-but submit" href="javascript:;" id="returnLogin" style="color: #FFFFFF;height: 40px">返回登录</a></div>
+					<div class="mb2" style="opacity: 0.6"><a class="act-but button" href="javascript:;" id="register" style="color: #FFFFFF;height: 40px">点击注册</a></div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div><!-- /container -->
+
+<script src="/js/TweenLite.min.js"></script>
+<script src="/js/EasePack.min.js"></script>
+<script src="/js/rAF.js"></script>
+<script src="/js/demo-1.js"></script>
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+
+
+
+
+<!--<script src="/html/assets/waifu-tips.js"></script>-->
+<!--<script src="/html/assets/live2d.js"></script>-->
+<!--<script type="text/javascript">initModel("/html/assets/")</script>-->
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var message_Path = 'http://localhost:8080/js/' //message.js的目录（必须填写，否则无法加载交互的文字）
+    var home_Path = 'http://localhost:8080/' //网站的根目录
+</script>
+<script type="text/javascript" src="../js/live2d.js"></script>
+<script type="text/javascript" src="../js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "http://localhost:8080/model/pio/model.json"); //model.json和其模型等都需要放在服务器网站上
+</script>
+
+</body>
+</html>
+
+
+
+<script type="text/javascript" src="/js/layui/layui.all.js"></script>
+<script type="text/javascript" src="/js/logic/login.js"></script>

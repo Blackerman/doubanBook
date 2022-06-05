@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html class="x-admin-sm">
+    <head>
+        <meta charset="UTF-8">
+        <title>欢迎页面</title>
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="viewport" content="width=device-width,user-scalable=yes, minimum-scale=0.4, initial-scale=0.8,target-densitydpi=low-dpi" />
+        <!--<link rel="stylesheet" href="./css/font.css">-->
+        <meta name="referrer" content="never">
+        <link rel="stylesheet" href="./css/index.css">
+        <link rel="stylesheet" href="./css/iconfont.css">
+        <script src="./lib/layui/layui.js" charset="utf-8"></script>
+        <script type="text/javascript" src="./js/index.js"></script>
+        <script src="./js/jquery.js"></script>
+        <script src="./js/jquery.min.js"></script>
+        <script src="./js/survey.js"></script>
+        <style>
+            #FontScroll{
+                width: 100%;
+                height: 245px;
+                overflow: hidden;
+            }
+            #FontScroll ul li{
+                height: 32px;
+                width: 100%;
+                color: #ffffff;
+                line-height: 32px;
+                overflow: hidden;
+                font-size: 14px;
+            }
+            #FontScroll ul li i{
+                color: red;
+            }
+            .layui-table td, .layui-table th{
+                min-width: auto !important;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="layui-fluid">
+            <div class="layui-row layui-col-space15">
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-body ">
+                            <blockquote class="layui-elem-quote">欢迎用户：
+                                <span class="x-red" id="adminName" >admin</span>
+                                <span>  </span>
+                                <span id="time"></span>
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">个人数据统计</div>
+                        <div class="layui-card-body ">
+                            <ul class="layui-row layui-col-space10 layui-this x-admin-carousel x-admin-backlog">
+                                <li class="layui-col-md2 layui-col-xs6">
+
+                                    <a href="../html/collection.html" class="x-admin-backlog-body">
+                                        <h3>收藏图书数目</h3>
+                                        <p>
+                                            <cite id="myBook">0</cite></p>
+                                    </a>
+                                </li>
+                                <li class="layui-col-md2 layui-col-xs6">
+                                    <a href="../html/myArticle.html" class="x-admin-backlog-body">
+                                        <h3>文章数目</h3>
+                                        <p>
+                                            <cite id="myArticle">0</cite></p>
+                                    </a>
+                                </li>
+                                <li class="layui-col-md2 layui-col-xs6">
+                                    <a href="../html/myLove.html" class="x-admin-backlog-body">
+                                        <h3>关注用户数目</h3>
+                                        <p>
+                                            <cite id="myLove">0</cite></p>
+                                    </a>
+                                </li>
+                                <li class="layui-col-md2 layui-col-xs6">
+                                    <a href="../html/myLoved.html" class="x-admin-backlog-body">
+                                        <h3>粉丝数目</h3>
+                                        <p>
+                                            <cite id="myLoved">0</cite></p>
+                                    </a>
+                                </li>
+                                <li class="layui-col-md2 layui-col-xs6">
+                                    <a href="../html/myMessage.html" class="x-admin-backlog-body">
+                                        <h3>消息数目</h3>
+                                        <p>
+                                            <cite id="myMessage">0</cite></p>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md4">
+                    <div class="layui-card">
+                        <div class="layui-card-header">平台数据统计
+
+                        </div>
+                        <div class="layui-card-body  ">
+
+                            <table class="layui-table">
+                                <thead>
+
+                                <tr class="text-c">
+                                    <th>统计</th>
+                                    <th >图书数量</th>
+                                    <th >文章数量</th>
+                                    <th >公告数量</th>
+                                    <th >用户</th>
+                                    <th >管理员</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr class="text-c">
+                                    <td>总数</td>
+                                    <td id="sumBook">0</td>
+                                    <td id="sumArticle">0</td>
+                                    <td id="sumNotice">0</td>
+                                    <td id="sumUser">0</td>
+                                    <td id="sumAdmin">0</td>
+                                </tr>
+                                <tr class="text-c">
+                                    <td>今日</td>
+                                    <td id="todayBook">0</td>
+                                    <td id="todayArticle">0</td>
+                                    <td id="todayNotice">0</td>
+                                    <td id="todayUser">0</td>
+                                    <td id="todayAdmin">0</td>
+                                </tr>
+                                <tr class="text-c">
+                                    <td>昨日</td>
+                                    <td id="yeBook">0</td>
+                                    <td id="yeArticle">0</td>
+                                    <td id="yeNotice">0</td>
+                                    <td id="yeUser">0</td>
+                                    <td id="yeAdmin">0</td>
+                                </tr>
+                                <tr class="text-c">
+                                    <td>上周</td>
+                                    <td id="weekBook">0</td>
+                                    <td id="weekArticle">0</td>
+                                    <td id="weekNotice">0</td>
+                                    <td id="weekUser">0</td>
+                                    <td id="weekAdmin">0</td>
+                                </tr>
+                                <tr class="text-c">
+                                    <td>上月</td>
+                                    <td id="monthBook">0</td>
+                                    <td id="monthArticle">0</td>
+                                    <td id="monthNotice">0</td>
+                                    <td id="monthUser">0</td>
+                                    <td id="monthAdmin">0</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md3">
+                        <div class="layui-card">
+                            <div class="layui-card-header">个性化图书推荐</div>
+                            <div class="layui-card-body ">
+                                <div class="layui-carousel" id="test1">
+                                    <div carousel-item>
+                                        <div id="item1">条目1</div>
+                                        <div id="item2">条目2</div>
+                                        <div id="item3">条目3</div>
+                                        <div id="item4">条目4</div>
+                                        <div id="item5">条目5</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                <div class="layui-col-sm6 layui-col-md3">
+                    <div class="layui-card">
+                        <div class="layui-card-header">平台数据月统计
+
+                        </div>
+                        <div class="layui-card-body ">
+
+                            <div id="chart4" style="width: 100%;height: 245px;"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-col-sm6 layui-col-md2">
+                    <div class="layui-card">
+                        <div class="layui-card-header">最热图书
+
+                        </div>
+                        <div class="layui-card-body ">
+
+                            <div class="news_style">
+
+                                <div class="myscroll" id="FontScroll">
+                                    <ul class="list">
+
+                                        <li><i class="iconfont">&#xe622;</i><a href="../html/book/bookManage.html" id="top1">乌合之众</a></li>
+                                        <li><i class="iconfont">&#xe622;</i><a href="../html/book/bookManage.html" id="top2">红楼梦</a></li>
+                                        <li><i class="iconfont">&#xe622;</i><a href="../html/book/bookManage.html" id="top3">我们仨</a></li>
+                                        <li><i class="iconfont">&#xe622;</i><a href="../html/book/bookManage.html" id="top4">哈利·波特</a></li>
+                                        <li><i class="iconfont">&#xe622;</i><a href="../html/book/bookManage.html" id="top5">三国演义</a></li>
+                                        <li><i class="iconfont">&#xe622;</i><a href="../html/book/bookManage.html" id="top6">哈姆莱特</a></li>
+                                        <li><i class="iconfont">&#xe622;</i><a href="../html/book/bookManage.html" id="top7">霍乱时期的爱情</a></li>
+                                        <li><i class="iconfont">&#xe622;</i><a href="../html/book/bookManage.html" id="top8">飘</a></li>
+                                        <li><i class="iconfont">&#xe622;</i><a href="../html/book/bookManage.html" id="top9">傲慢与偏见</a></li>
+                                        <li><i class="iconfont">&#xe622;</i><a href="../html/book/bookManage.html" id="top10">基督山伯爵</a></li>
+                                        <li><i class="iconfont">&#xe622;</i><a href="../html/book/bookManage.html" id="top11">简爱</a></li>
+                                        <li><i class="iconfont">&#xe622;</i><a href="../html/book/bookManage.html" id="top12">毛泽东</a></li>
+                                        <li><i class="iconfont">&#xe622;</i><a href="../html/book/bookManage.html" id="top13">编程</a></li>
+                                        <li><i class="iconfont">&#xe622;</i><a href="../html/book/bookManage.html" id="top14">Java</a></li>
+                                        <li><i class="iconfont">&#xe622;</i><a href="../html/book/bookManage.html" id="top15">围城</a></li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-header">系统信息</div>
+                        <div class="layui-card-body ">
+
+                            <table class="layui-table">
+                                <thead>
+                                <tr>
+                                    <th colspan="4" scope="col">服务器信息</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <th>服务器计算机名</th>
+                                    <td><span id="lbServerName">http://127.0.0.1/</span></td>
+
+                                </tr>
+                                <tr>
+                                    <td>服务器IP地址</td>
+                                    <td>192.168.1.1</td>
+                                </tr>
+                                <tr>
+                                    <td>服务器域名</td>
+                                    <td>www.xxx.net</td>
+
+                                </tr>
+                                <tr>
+                                    <td>服务器端口 </td>
+                                    <td>80</td>
+                                </tr>
+                                <tr>
+                                    <td>服务器IIS版本 </td>
+                                    <td>Microsoft-IIS/6.0</td>
+
+                                </tr>
+                                <tr>
+                                    <td>本文件所在文件夹 </td>
+                                    <td>D:\WebSite\</td>
+                                </tr>
+                                <tr>
+                                    <td>服务器操作系统 </td>
+                                    <td>Microsoft Windows NT 5.2.3790 Service Pack 2</td>
+
+                                </tr>
+                                <tr>
+                                    <td>系统所在文件夹 </td>
+                                    <td>C:\WINDOWS\system32</td>
+                                </tr>
+                                <tr>
+                                    <td>服务器脚本超时时间 </td>
+                                    <td>30000秒</td>
+
+                                </tr>
+                                <tr>
+                                    <td>服务器的语言种类 </td>
+                                    <td>Chinese (People's Republic of China)</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="layui-col-md12">
+                    <div class="layui-card">
+                        <div class="layui-card-body ">
+                            <p style="text-align: center;"> Copyright ©2020  All Rights Reserved.</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+        </div>
+    </body>
+
+    <script src="./js/echarts.min.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $('.myscroll').myScroll({
+                speed: 60, //数值越大，速度越慢
+                rowHeight: 38 //li的高度
+            });
+
+        });
+
+
+
+        function getTime(){
+            var myDate = new Date();
+            var myYear = myDate.getFullYear(); //获取完整的年份(4位,1970-????)
+            var myMonth = myDate.getMonth()+1; //获取当前月份(0-11,0代表1月)
+            var myToday = myDate.getDate(); //获取当前日(1-31)
+            var myDay = myDate.getDay(); //获取当前星期X(0-6,0代表星期天)
+            var myHour = myDate.getHours(); //获取当前小时数(0-23)
+            var myMinute = myDate.getMinutes(); //获取当前分钟数(0-59)
+            var mySecond = myDate.getSeconds(); //获取当前秒数(0-59)
+            var week = ['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+            var nowTime;
+
+            nowTime = myYear+'-'+fillZero(myMonth)+'-'+fillZero(myToday)+'&nbsp;&nbsp;'+fillZero(myHour)+':'+fillZero(myMinute)+':'+fillZero(mySecond)+'&nbsp;&nbsp;'+week[myDay]+'&nbsp;&nbsp;';
+            //console.log(nowTime);
+            $('#time').html(nowTime);
+        };
+        function fillZero(str){
+            var realNum;
+            if(str<10){
+                realNum	= '0'+str;
+            }else{
+                realNum	= str;
+            }
+            return realNum;
+        }
+        setInterval(getTime,1000);
+    </script>
+    <script src="js/fontscroll.js"></script>
+    <script src="/js/logic/start.js"></script>
+</html>

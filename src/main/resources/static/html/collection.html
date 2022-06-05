@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="referrer" content="never">
+    <title>用户管理</title>
+    <link rel="stylesheet" href="/js/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/ZLM.css">
+</head>
+<body class="greenimage">
+<!--检索功能-->
+<div class="layui-row" id="divSearch">
+    <div class="layui-form">
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">
+                图书名称
+            </label>
+            <div class="layui-inline">
+                <input type="text" name="book_name" id="book_name" placeholder="需要检索的图书名" class="layui-input"/>
+            </div>
+        </div>
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">
+                作者
+            </label>
+            <div class="layui-inline">
+                <input type="text" name="book_author" id="book_author" placeholder="需要检索的作者" class="layui-input"/>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-inline" style="margin-left: 50px">
+            <div class="layui-inline">
+                <button id="btnSearch1" class="layui-btn layui-btn-primary">
+                    <i class="layui-icon layui-icon-search"></i>检索
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--检索结果-->
+<div class="layui-row" id="result">
+    <table id="tblResult1" lay-filter="tblResult1"></table>
+</div>
+
+<div id="divBookInfo" style="display:none;margin: 10px;">
+    <div class="layui-form layui-form-pane" layui-filter="bookInfoEdit">
+        <div class="layui-form-item">
+            <label class="layui-form-label">图书名称</label>
+            <div class="layui-input-block" id="name" style="text-align: center;font-size: 20px"></div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">作者：</label>
+            <div class="layui-input-block" id="author" style="text-align: center;font-size: 20px"></div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">简介</label>
+            <div class="layui-input-block" id="info" style="text-align: center;font-size: 10px"></div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">评分：</label>
+            <div class="layui-input-block">
+                <input type="text" id="score"
+                       required placeholder="请输入您的评分" class="layui-input"/>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
+<script type="text/javascript" src="/js/layui/layui.all.js"></script>
+<script type="text/javascript" src="/js/logic/collection.js"></script>

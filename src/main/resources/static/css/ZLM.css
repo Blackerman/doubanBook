@@ -1,0 +1,7 @@
+.greenimage{
+    background-image:url(/image/update.png);
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+    background-position:center;
+    word-break: normal;
+}

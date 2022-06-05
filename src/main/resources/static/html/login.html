@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="/js/layui/css/layui.css">
+    <script src="/js/jquery.min.js"></script>
+    <link type="text/css" href="/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/css/live2d.css"/>
+    <style type="text/css">
+        .container{
+            width: 420px;
+            height: 320px;
+            min-height: 320px;
+            max-height: 320px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            padding: 20px;
+            z-index: 130;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 3px 18px rgba(100, 0, 0, .5);
+            font-size: 16px;
+            opacity: 0.8;
+        }
+        .close{
+            background-color: white;
+            border: none;
+            font-size: 18px;
+            margin-left: 410px;
+            margin-top: -10px;
+        }
+        .layui-input{
+            border-radius: 5px;
+            width: 300px;
+            height: 40px;
+            font-size: 15px;
+        }
+        .layui-form-item{
+            margin-left: -20px;
+        }
+        #logoid{
+            margin-top: -16px;
+            padding-left:150px;
+            padding-bottom: 15px;
+        }
+        .layui-btn{
+            margin-left: -50px;
+            border-radius: 5px;
+            width: 350px;;
+            height: 40px;
+            font-size: 15px;
+        }
+        a:hover{
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<script src="../js/particles.min.js"></script>
+<div id="parallax" class="login bg-black">
+    <div id="particles-js"></div>
+    <form class="layui-form " action = "/douban/user/login" method="post"  onSubmit="javascript:return check_login();">
+        <div class="container layui-anim-upbit">
+            <button class="close" title="关闭">X</button>
+         <div class="layui-form-mid layui-word-aux">
+            <img id="logoid" src="../image/1.png" height="45">
+         </div>
+            <div class="layui-form-item " style="margin-top: 30px;">
+                <label class="layui-form-label">用户名<i class="layui-icon">&#xe66f;</i></label>
+                    <div class="layui-input-inline">
+                        <input type="username" required lay-verify="username" placeholder="请输入用户名" class="layui-input" lay-verType="msg" name="name"/>
+                    </div>
+            </div>
+            <div class="layui-form-item " style="margin-top: 30px;">
+                <label class="layui-form-label">密码<i class="layui-icon"> &#xe672;</i></label>
+                    <div class="layui-input-inline">
+                        <input type="password" name="password" required lay-verify="userpassword" placeholder="请输入密码" class="layui-input"/>
+                    </div>
+            </div>
+
+            <div class="layui-form-item" style="margin-top: 30px;">
+                <div class="layui-input-block">
+                    <button class="layui-btn layui-btn-primary layui-btn-radius" lay-submit lay-filter="saveAndCommit">登录</button>
+                </div>
+                <div class="layui-input-block">
+                    <button class="layui-btn layui-btn-primary layui-btn-radius" id="register" style="margin-top: 20px">注册</button>
+                </div>
+            </div>
+
+
+        </div>
+    </form>
+</div>
+
+<script src="../js/script.js"></script>
+</body>
+<div id="landlord">
+    <div class="message" style="opacity:0"></div>
+    <canvas id="live2d" width="280" height="250" class="live2d"></canvas>
+    <div class="hide-button">隐藏</div>
+</div>
+
+<script type="text/javascript" src="https://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript">
+    var message_Path = 'http://localhost:8080/js/' //message.js的目录（必须填写，否则无法加载交互的文字）
+    var home_Path = 'http://localhost:8080/' //网站的根目录
+</script>
+<script type="text/javascript" src="../js/live2d.js"></script>
+<script type="text/javascript" src="../js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "http://localhost:8080/model/pio/model.json"); //model.json和其模型等都需要放在服务器网站上
+</script>
+
+<html>
+<script type="text/javascript" src="/js/layui/layui.all.js"></script>
+<script type="text/javascript" src="/js/logic/login1.js"></script>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>我的消息</title>
+    <link rel="stylesheet" href="/js/layui/css/layui.css">
+    <link rel="stylesheet" href="/css/ZLM.css">
+    <style type="text/css">
+    </style>
+</head>
+<body class="greenimage">
+<!--检索-->
+<div class="layui-row" id="divSearch" style="margin-top: 10px">
+    <div class="layui-form">
+
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">
+                消息类型
+            </label>
+            <div class="layui-inline" style="margin-left: 20px">
+                <select name="type" id="type" class="layui-input">
+                    <option value="" selected>全部</option>
+                    <option value="msg">私信</option>
+                    <option value="focus">关注</option>
+                    <option value="love">点赞</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-inline">
+            <label class="layui-form-label">
+                消息状态
+            </label>
+            <div class="layui-inline" style="margin-left: 20px">
+                <select name="book_d_hotTag" id="state" class="layui-input">
+                    <option value="" selected>全部</option>
+                    <option value="0">未读</option>
+                    <option value="1">已读</option>
+                </select>
+
+            </div>
+        </div>
+
+        <div class="layui-form-item layui-inline" style="margin-left: 50px">
+            <div class="layui-inline">
+                <button id="btnSearch" class="layui-btn layui-btn-primary " >
+                    <i class="layui-icon layui-icon-search" style="font-size:15px"></i>
+                </button>
+            </div>
+
+    </div>
+
+<!--我的文章内容-->
+        <div id="divMessageInfo" style="display:none;margin: 10px;">
+            <div class="layui-form " layui-filter="bookInfoEdit">
+                <div class="layui-form-item">
+                    <label class="layui-form-label">用户</label>
+                    <div class="layui-input-block" id="user" style="text-align: center;font-size: 20px"></div>
+                </div>
+                <div class="layui-form-item layui-form-text">
+                    <label class="layui-form-label">内容</label>
+                    <div class="layui-input-block">
+                        <textarea name="desc" placeholder="无" class="layui-textarea" id="content"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="layui-row" id="result">
+    <table id="tblResult" lay-filter="tblResult"></table>
+</div>
+
+</body>
+</html>
+
+<script type="text/javascript" src="/js/layui/layui.js"></script>
+<script type="text/javascript" src="/js/logic/myMessage.js"></script>
+
+
+
+
