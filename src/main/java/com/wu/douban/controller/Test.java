@@ -6,6 +6,7 @@ public class Test {
         System.out.println("master commit");
         System.out.println("branch1");
         System.out.println("push cast");
+        System.out.println("pull test");
 
     }
 }
